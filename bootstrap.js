@@ -16,11 +16,11 @@ var debug = require('debug')('bw');
 var app = require('./app.js').app;
 
 // Start the app
-  app.listen(process.env.API_GATEWAY_PORT, () => {
-    console.log(process.env.API_GATEWAY_ADDRESS)
-    console.log(process.env.API_GATEWAY_PORT);
-    debug("The app is listening to port" + process.env.API_GATEWAY_PORT);
-  });
+app.listen(process.env.API_GATEWAY_PORT, () => {
+  console.log(process.env.API_GATEWAY_ADDRESS)
+  console.log(process.env.API_GATEWAY_PORT);
+  debug("The app is listening to port" + process.env.API_GATEWAY_PORT);
+});
 
 // IF app need access to MongoDB, then the APP start should be wrapped as bellow:
 //

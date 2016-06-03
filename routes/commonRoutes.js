@@ -2,10 +2,10 @@
 import Router from "koa-router";
 
 // Get DI repos if needed
-import {Event} from '../repos';
+//import {RepoName} from '../repos';
 
 // Get mongoDB access if needed
-import {getMongoPool} from '../middlewares/mongodb';
+import {getMongoPool} from '../bw_commons/services/mongoDBConnector.js';
 
 // Controller
 import commonController from '../controllers/commonController';
@@ -24,6 +24,6 @@ const commonRouter  = new Router({
 });
 commonRouter
   .get('/', controller.index)
-  .post('/tmp/:id/pictures', controller.hello);
+  .post('/:name', controller.hello);
 
 export default commonRouter;

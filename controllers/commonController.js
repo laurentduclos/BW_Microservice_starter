@@ -1,5 +1,5 @@
 'use strict';
-import {ValidationError} from '../errors'
+import {ValidationError} from '../bw_commons/errors/'
 import debug from 'debug';
 import multiparter from 'async-busboy';
 import parse from 'co-body';
@@ -37,11 +37,11 @@ const commonController = function(eventRepo) {
      * @param {String} A username
      *
      */
-    create: async function(ctx, next) {
+    hello: async function(ctx, next) {
       const username = ctx.params.name;
       return ctx.data(200, `Hello ${username}`);
     }
   }
 }
 
-export default commonConroller;
+export default commonController;
