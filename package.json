@@ -63,9 +63,9 @@
   },
   "engine": "node >= 6.0.0",
   "scripts": {
-    "test": "BW_ENV=test /var/node_dependencies/node_modules/.bin/babel-node /var/node_dependencies/node_modules/.bin/_mocha ./tests/unit/index.js --harmony -u bdd -R spec --watch",
-    "it": "BW_ENV=test node /var/node_dependencies/node_modules/.bin/_mocha ./tests/integration/index.js --harmony -u bdd -R spec --watch",
-    "cover": "BW_ENV=test /var/node_dependencies/node_modules/.bin/babel-node /var/node_dependencies/node_modules/.bin/babel-istanbul cover --dir ./tests/coverage /var/node_dependencies/node_modules/.bin/_mocha ./tests/index.js",
+    "test": "BW_ENV=test /var/node_dependencies/node_modules/.bin/babel-node /var/node_dependencies/node_modules/.bin/_mocha ./_tests/unit/index.js --harmony -u bdd -R spec --watch",
+    "it": "BW_ENV=test node /var/node_dependencies/node_modules/.bin/_mocha ./_tests/integration/index.js --harmony -u bdd -R spec --watch",
+    "cover": "BW_ENV=test /var/node_dependencies/node_modules/.bin/babel-node /var/node_dependencies/node_modules/.bin/babel-istanbul cover --dir ./_tests/coverage /var/node_dependencies/node_modules/.bin/_mocha ./_tests/index.js",
     "start": "DEBUG=bw:* nodemon --watch ./ --harmony ./bootstrap.js",
     "migrate": "/var/node_dependencies/node_modules/migrate/bin/migrate up",
     "dbReset": "/var/node_dependencies/node_modules/migrate/bin/migrate down && /var/node_dependencies/node_modules/migrate/bin/migrate up",

@@ -1,7 +1,6 @@
-import {mongoInit, mongoClose} from '../middlewares/mongodb';
+import {mongoInit, mongoClose} from '../bw_commons/services/mongoDBConnector';
 import migrate from 'migrate';
 import Promise from 'bluebird';
-import {TEST_NUM_VALID} from "../services/SMSProvider";
 import {ObjectID} from 'mongodb';
 const set = migrate.load('migrations/.migrate-tests', 'migrations');
 export const userId = 'test_user_id';
