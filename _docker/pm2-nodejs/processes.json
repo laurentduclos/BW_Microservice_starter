@@ -1,0 +1,22 @@
+{
+	"apps": [
+		{
+			"name": "bwStage",
+			"script": "bootstrap.js",
+			"log_date_format" : "[PM2]YYYY-MM-DD HH:mm Z",
+			"log_file": "/var/logs/BW/access/access.log",
+			"error_file": "/var/logs/BW/error/error.log",
+			"instances": "max",
+			"exec_mode": "cluster",
+			// "watch": true,
+		 //  "watch_options": {
+		 //    "usePolling": true,
+		 //    "useFsEvents": false,
+		 //    "atomic": false
+		 //  },
+			"ignore_watch": ["node_modules"]
+		}
+	]
+}
+
+

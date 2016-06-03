@@ -1,0 +1,31 @@
+version: '2'
+services:
+  database:
+    image: mongo
+    ports:
+      - "28017:27017"
+  api:
+    build:
+      context: ./
+      dockerfile: _docker/pm2-nodejs/Dockerfile
+    container_name: BW_API_GATEWAY
+    environment:
+      port: "4000"
+      NODE_PATH: /var/node_dependencies/node_modules
+      DB_HOST: "database"
+      DB_PORT: "27017"
+      DB_NAME: "bwLocal"
+    volumes:
+      - "./:/var/www"
+
+  nginx:
+    build:
+      context: ./
+      dockerfile: _docker/nginx/Dockerfile
+    container_name: BW_REVERSE_PROXY
+    ports:
+      - "80:3000"
+
+networks:
+  nginx_node_ntw:
+    driver: bridge
