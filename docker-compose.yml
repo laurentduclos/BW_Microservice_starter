@@ -8,7 +8,7 @@ services:
     build:
       context: ./
       dockerfile: _docker/pm2-nodejs/Dockerfile
-    container_name: BW_API_GATEWAY
+    container_name: YOUR_SERVICE_NAME_HERE
     environment:
       port: "4000"
       NODE_PATH: /var/node_dependencies/node_modules

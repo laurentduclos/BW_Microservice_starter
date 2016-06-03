@@ -3,10 +3,11 @@
 1. Download docker toolbox on your operating system
 2. Start docker machine and bind a terminal session (see: Binding a terminal session to the docker-machine)
 3. Run `docker-machine ip` and remember this IP.
-4. Now from the root folder of this repositatry run: `docker-compose -f docker-compose.yml up --build`.
+4. Update the `container_name` field in `docker-compose.yml` under `api`
+5. Now from the root folder of this repositatry run: `docker-compose -f docker-compose.yml up --build`.
 The first time this command is ran it will take a significant amount of time. (around 30minutes).
 This step will download the inital base images from the docker repo (ubunut, nginx, mongo) AND install the app dependencies
-5. You should now be able to reach in your browser: http://[IP ADDRESS FROM STEP 3]
+6. You should now be able to reach in your browser: http://[IP ADDRESS FROM STEP 3]
 
 
 ## Binding a terminal session to the docker-machine
